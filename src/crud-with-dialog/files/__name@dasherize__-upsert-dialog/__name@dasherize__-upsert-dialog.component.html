@@ -1,0 +1,85 @@
+<h2 mat-dialog-title>
+  {{
+    (data.entity ? 'dialog.entity.update' : 'dialog.entity.create')
+      | translate: { type: 'text.person' | translate }
+  }}
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div class="d-grid">
+      <mat-form-field>
+        <mat-label>{{ 'text.name' | translate }}</mat-label>
+        <input matInput formControlName="name" />
+        <mat-error *ngIf="form.get('name').hasError('required')">
+          {{
+            'error.required' | translate: { field: 'text.name' | translate }
+          }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'text.liabilities_account' | translate }}</mat-label>
+        <mat-select formControlName="liabilitiesAccountUUID">
+          <mat-option class="no-selection">{{
+            'text.none' | translate
+          }}</mat-option>
+          <mat-option
+            [value]="account.uuid"
+            *ngFor="let account of accounts$ | async"
+          >
+            {{ account | accountDisplay }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'text.bank_name' | translate | titlecase }}</mat-label>
+        <input matInput formControlName="bankName" />
+        <mat-error *ngIf="form.get('bankName').hasError('required')">
+          {{
+            'error.required'
+              | translate: { field: 'text.bank_name' | translate | titlecase }
+          }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'text.bank_account' | translate | titlecase }}</mat-label>
+        <input matInput formControlName="bankAccount" />
+        <mat-error *ngIf="form.get('bankAccount').hasError('required')">
+          {{
+            'error.required'
+              | translate
+                : { field: 'text.bank_account' | translate | titlecase }
+          }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'text.phone' | translate }}</mat-label>
+        <input matInput formControlName="phone" />
+        <mat-error *ngIf="form.get('phone').hasError('required')">
+          {{
+            'error.required' | translate: { field: 'text.phone' | translate }
+          }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'text.email' | translate }}</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="form.get('email').hasError('email')">
+          {{ 'error.email.pattern' | translate }}
+        </mat-error>
+        <mat-error *ngIf="form.get('email').hasError('required')">
+          {{
+            'error.required' | translate: { field: 'text.email' | translate }
+          }}</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">
+    {{ 'system.cancel' | translate }}
+  </button>
+  <button mat-raised-button color="primary" (click)="save()">
+    {{ 'system.save' | translate }}
+  </button>
+</mat-dialog-actions>

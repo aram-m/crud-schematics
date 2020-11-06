@@ -1,0 +1,15 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "crud-with-dialog": {
+      "description": "Table module with dialog",
+      "factory": "./crud-with-dialog/index#crudWithDialog",
+      "schema": "./crud-with-dialog/schema.json"
+    },
+    "crud-service": {
+      "description": "CRUD API service",
+      "factory": "./crud-service/index#crudService",
+      "schema": "./crud-service/schema.json"
+    }
+  }
+}
