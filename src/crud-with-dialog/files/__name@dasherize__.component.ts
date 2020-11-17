@@ -4,8 +4,8 @@ import { select, Store } from '@ngrx/store';
 import { combineLatest, Subject } from 'rxjs';
 import { skip, startWith, tap } from 'rxjs/operators';
 import { selectQueryParam } from 'src/app/store';
-import * as <%= classify(name) %>Actions from '../../store/actions/'./<%=dasherize(name)%>.actions';
-import * as <%= classify(name) %>Selectors from '../../store/selectors/'./<%=dasherize(name)%>.selectors';
+import * as <%= classify(name) %>Actions from '../../store/actions/<%=dasherize(name)%>.actions';
+import * as <%= classify(name) %>Selectors from '../../store/selectors/<%=dasherize(name)%>.selectors';
 
 @Component({
   selector: 'app-<%=dasherize(name)%>',
