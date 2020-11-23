@@ -15,8 +15,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { EnterSwitchModule } from 'src/app/_shared/global-modules/enter-switch/enter-switch.module';
 
-import { <%= classify(name) %>TableComponent } from './<%=dasherize(name)%>-upsert-dialog/<%=dasherize(name)%>-upsert-dialog.component';
-import { <%= classify(name) %>UpsertDialogComponent } from './<%=dasherize(name)%>-table/<%=dasherize(name)%>-table.component';
+import { <%= classify(name) %>TableComponent } from './<%=dasherize(name)%>-table/<%=dasherize(name)%>-table.component';
+import { <%= classify(name) %>UpsertDialogComponent } from './<%=dasherize(name)%>-upsert-dialog/<%=dasherize(name)%>-upsert-dialog.component'; 
 import { <%= classify(name) %>RoutingModule } from './<%=dasherize(name)%>-routing.module';
 
 @NgModule({

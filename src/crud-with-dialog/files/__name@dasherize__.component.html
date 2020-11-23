@@ -6,13 +6,13 @@
 </div>
 <div class="mat-elevation-z4 p-relative" *ngIf="<%=camelize(name)%>s$ | async as <%=camelize(name)%>s">
   <app-<%=dasherize(name)%>-table
-    [data]="roots"
+    [data]="<%=camelize(name)%>s"
     [loading]="loading$ | async"
     (edit)="edit($event)"
     (remove)="remove($event)"
   ></app-<%=dasherize(name)%>-table>
   <mat-paginator
-    [disabled]="!roots.length"
+    [disabled]="!<%=camelize(name)%>s.length"
     [length]="totalCount$ | async"
     [pageIndex]="pageIndex$ | async"
     [pageSize]="10"

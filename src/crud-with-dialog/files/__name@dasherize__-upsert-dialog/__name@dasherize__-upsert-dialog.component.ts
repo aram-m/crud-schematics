@@ -13,6 +13,8 @@ export class <%=classify(name)%>UpsertDialogComponent implements OnInit, OnDestr
   constructor(
     private store: Store,
     private fb: FormBuilder,
+    private facade: ConfigsFacade,
+    private dialogRef: MatDialogRef,
     @Inject(MAT_DIALOG_DATA) public data
   ) {}
 

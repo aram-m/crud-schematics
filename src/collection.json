@@ -10,6 +10,11 @@
       "description": "CRUD API service",
       "factory": "./crud-service/index#crudService",
       "schema": "./crud-service/schema.json"
+    },
+    "crud-store": {
+      "description": "NGRX store for crud",
+      "factory": "./crud-store/index#crudStore",
+      "schema": "./crud-store/schema.json"
     }
   }
 }
