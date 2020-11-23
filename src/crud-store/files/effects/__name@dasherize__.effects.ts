@@ -16,11 +16,11 @@ import { <%= classify(name) %>Service } from '../../_api/<%= dasherize(name) %>.
 import { Store, select } from '@ngrx/store';
 import { selectRouteNestedParam } from '..';
 import { MatDialog } from '@angular/material/dialog';
-import { Upsert<%= classify(name) %>DialogComponent } from 'src/app/<%= dasherize(name) %>/upsert-<%= dasherize(name) %>-dialog/upsert-<%= dasherize(name) %>-dialog.component.ts';
+import { <%= classify(name) %>UpsertDialogComponent } from 'src/app/<%= dasherize(name) %>/<%= dasherize(name) %>-upsert-dialog/<%= dasherize(name) %>-upsert-dialog.component';
 import { ConfirmDialogComponent } from 'src/app/_shared/confirm-dialog/confirm-dialog.component';
 import { TranslateService } from '@ngx-translate/core';
 import * as <%= classify(name) %>Actions from '../actions/<%= dasherize(name) %>.actions';
-import * as %= classify(name) %>Selectors from '../selectors/<%= dasherize(name) %>.selectors';
+import * as <%= classify(name) %>Selectors from '../selectors/<%= dasherize(name) %>.selectors';
 
 
 @Injectable()
@@ -141,7 +141,7 @@ export class <%= classify(name) %>sEffects {
   checkCount$ = createEffect(() =>
     this.actions$.pipe(
       ofType(<%= classify(name) %>Actions.deleteItemSuccess),
-      withLatestFrom(this.store.pipe(select(<%= classify(name) %>Selectors.select<%= classify(name) %>sState))),
+      withLatestFrom(this.store.pipe(select(<%= classify(name) %>Selectors.selectState))),
       mergeMap(([, state]) => {
         if (state.pageIndex && !state.ids.length) {
           return of(<%= classify(name) %>Actions.load({}));
@@ -156,7 +156,7 @@ export class <%= classify(name) %>sEffects {
       this.actions$.pipe(
         ofType(<%= classify(name) %>Actions.addDialog),
         tap(({ initData }) =>
-          this.dialog.open(Upsert<%= classify(name) %>DialogComponent, {
+          this.dialog.open(<%= classify(name) %>UpsertDialogComponent, {
             width: '650px',
             data: {
               initData,
@@ -179,7 +179,7 @@ export class <%= classify(name) %>sEffects {
       this.actions$.pipe(
         ofType(<%= classify(name) %>Actions.loadByIdForDialogSuccess),
         tap(({ payload }) =>
-          this.dialog.open(Upsert<%= classify(name) %>DialogComponent, {
+          this.dialog.open(<%= classify(name) %>UpsertDialogComponent, {
             width: '850px',
             data: { entity: payload },
           })

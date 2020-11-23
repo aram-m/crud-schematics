@@ -102,36 +102,6 @@ export const updateFailure = createAction(
   props<{ error: any }>()
 );
 
-export const activate = createAction(
-  '[<%= classify(name) %>/API] Activate <%= classify(name) %>',
-  props<{ uuid: string }>()
-);
-
-export const activateSuccess = createAction(
-  '[<%= classify(name) %>s/API] Activate <%= classify(name) %> Success',
-  props<{ payload: Update<<%= classify(name) %>.Model> }>()
-);
-
-export const activateFailure = createAction(
-  '[<%= classify(name) %>s/API] Activate <%= classify(name) %> Failure',
-  props<{ error: any }>()
-);
-
-export const deactivate = createAction(
-  '[<%= classify(name) %>/API] Deactivate <%= classify(name) %>',
-  props<{ uuid: string }>()
-);
-
-export const deactivateSuccess = createAction(
-  '[<%= classify(name) %>/API] Deactivate <%= classify(name) %> Success',
-  props<{ payload: Update<<%= classify(name) %>.Model> }>()
-);
-
-export const deactivateFailure = createAction(
-  '[<%= classify(name) %>/API] Deactivate <%= classify(name) %> Failure',
-  props<{ error: any }>()
-);
-
 export const deleteItem = createAction(
   '[<%= classify(name) %>/API] Delete <%= classify(name) %>',
   props<{ uuid: string }>()

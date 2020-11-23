@@ -22,12 +22,6 @@
           <mat-option class="no-selection">{{
             'text.none' | translate
           }}</mat-option>
-          <mat-option
-            [value]="account.uuid"
-            *ngFor="let account of accounts$ | async"
-          >
-            {{ account | accountDisplay }}
-          </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>

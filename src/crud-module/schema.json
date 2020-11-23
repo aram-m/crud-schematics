@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "crud-service",
-  "title": "Crud-service",
+  "id": "crud-module",
+  "title": "Crud Table Module with dialog",
   "type": "object",
   "properties": {
     "name": {
@@ -10,10 +10,6 @@
         "$source": "argv",
         "index": 0
       }
-    },
-    "url": {
-      "type": "string",
-      "x-prompt": "Resource url ? (eg: purchases/expense)"
     },
     "project": {
       "type": "string",
@@ -46,6 +42,5 @@
       "default": false,
       "description": "Export component from module?"
     }
-  },
-  "required": []
+  }
 }

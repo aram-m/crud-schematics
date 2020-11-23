@@ -1,20 +1,25 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "crud-with-dialog": {
-      "description": "Table module with dialog",
-      "factory": "./crud-with-dialog/index#crudWithDialog",
-      "schema": "./crud-with-dialog/schema.json"
+    "crud-module": {
+      "description": "Table module with dialog/",
+      "factory": "./crud-module/index#crudModule",
+      "schema": "./crud-module/schema.json"
     },
     "crud-service": {
-      "description": "CRUD API service",
+      "description": "CRUD API service.",
       "factory": "./crud-service/index#crudService",
       "schema": "./crud-service/schema.json"
     },
     "crud-store": {
-      "description": "NGRX store for crud",
+      "description": "NGRX store for crud.",
       "factory": "./crud-store/index#crudStore",
       "schema": "./crud-store/schema.json"
+    },
+    "module-with-store": {
+      "description": "Module with store.",
+      "factory": "./module-with-store/index",
+      "schema": "./module-with-store/schema.json"
     }
   }
 }

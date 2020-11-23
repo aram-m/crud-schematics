@@ -1,7 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
+import { ConfigsFacade } from 'src/app/_shared/configs.facade';
+import { TranslateService } from '@ngx-translate/core';
 import * as <%=classify(name)%>Actions from '../../store/actions/<%=dasherize(name)%>.actions';
 
 @Component({
@@ -9,12 +11,13 @@ import * as <%=classify(name)%>Actions from '../../store/actions/<%=dasherize(na
   templateUrl: './<%=dasherize(name)%>-upsert-dialog.component.html',
   styleUrls: ['./<%=dasherize(name)%>-upsert-dialog.component.scss'],
 })
-export class <%=classify(name)%>UpsertDialogComponent implements OnInit, OnDestroy {
+export class <%=classify(name)%>UpsertDialogComponent implements OnInit {
   constructor(
     private store: Store,
     private fb: FormBuilder,
     private facade: ConfigsFacade,
-    private dialogRef: MatDialogRef,
+    private translate: TranslateService,
+    private dialogRef: MatDialogRef<<%=classify(name)%>UpsertDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data
   ) {}
 
