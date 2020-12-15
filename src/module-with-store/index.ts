@@ -9,6 +9,7 @@ import {
 export default function (options: any): Rule {
   return (host: Tree, context: SchematicContext) => {
     return chain([
+      schematic('crud-service', { ...options }),
       schematic('crud-store', { ...options }),
       schematic('crud-module', {
         ...options,

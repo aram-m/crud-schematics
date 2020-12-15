@@ -18,6 +18,7 @@ import { EnterSwitchModule } from 'src/app/_shared/global-modules/enter-switch/e
 import { <%= classify(name) %>TableComponent } from './<%=dasherize(name)%>-table/<%=dasherize(name)%>-table.component';
 import { <%= classify(name) %>UpsertDialogComponent } from './<%=dasherize(name)%>-upsert-dialog/<%=dasherize(name)%>-upsert-dialog.component'; 
 import { <%= classify(name) %>RoutingModule } from './<%=dasherize(name)%>-routing.module';
+import { <%= classify(name) %>Component } from './<%=dasherize(name)%>.component';
 
 @NgModule({
   declarations: [ <%= classify(name) %>Component,     
