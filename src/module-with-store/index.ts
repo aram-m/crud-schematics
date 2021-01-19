@@ -11,6 +11,7 @@ export default function (options: any): Rule {
     return chain([
       schematic('crud-service', { ...options }),
       schematic('crud-store', { ...options }),
+      schematic('list-guard', { ...options }),
       schematic('crud-module', {
         ...options,
       }),

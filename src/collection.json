@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "crud-module": {
-      "description": "Table module with dialog/",
+      "description": "Table module with dialog.",
       "factory": "./crud-module/index#crudModule",
       "schema": "./crud-module/schema.json"
     },
@@ -15,6 +15,11 @@
       "description": "NGRX store for crud.",
       "factory": "./crud-store/index#crudStore",
       "schema": "./crud-store/schema.json"
+    },
+    "list-guard": {
+      "description": "List guard.",
+      "factory": "./list-guard/index#listGuard",
+      "schema": "./list-guard/schema.json"
     },
     "module-with-store": {
       "description": "Module with store.",
