@@ -50,11 +50,11 @@
     <ng-container matColumnDef="group">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         {{ 'text.group' | translate }}
-     </mat-header-cell>
+      </mat-header-cell>
       <mat-cell *matCellDef="let record">{{ record.groupCode }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="actions" stickyEnd>
-      <mat-header-cell *matHeaderCellDef></th>
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let record">
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="actions">
           <mat-icon>more_vert</mat-icon>
@@ -73,7 +73,7 @@
         </mat-menu>
       </mat-cell>
     </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
 </ng-container>
